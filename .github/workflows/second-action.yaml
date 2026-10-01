@@ -3,7 +3,7 @@ name: Manual Workflow
 on:
   workflow_dispatch: # Enables the manual trigger button
   schedule:
-    - cron: '26 9 * * *'  
+    - cron: '10 15 * * *'  
 
 jobs:
   greet:
