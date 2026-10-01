@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: clone 
-        uses: action/checkout@v3
+        uses: action/checkout@v4
       - name: build
         run: echo "build"
       
