@@ -1,12 +1,10 @@
-name: first Workflow
-on: 
-  workflow_dispatch:
+name: Manual Workflow
+
+on:
+  workflow_dispatch: # Enables the manual trigger button
+
 jobs:
-  first-jobs:
+  greet:
     runs-on: ubuntu-latest
     steps:
-      - name: print greeting
-        run: echo "hello world"
-      - name: test
-        run: echo "test"
-  
+      - run: echo "Hello World!"
