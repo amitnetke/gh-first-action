@@ -5,11 +5,25 @@ on:
   push:
 
 jobs:
-  greet:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: clone 
         uses: actions/checkout@v4
       - name: build
         run: echo "build"
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone 
+        uses: actions/checkout@v4
+      - name: build
+        run: echo "test"
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone 
+        uses: actions/checkout@v4
+      - name: build
+        run: echo "Deploy"
       
