@@ -20,6 +20,7 @@ jobs:
       - name: build
         run: echo "test"
   Deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: clone 
