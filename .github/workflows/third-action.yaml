@@ -4,21 +4,19 @@ on:
   
 jobs:
 
-  checkout:
+        
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: checout code
         uses: actions/checkout@v4
         
-  build:
-    runs-on: ubuntu-latest
-    steps:
       - name: build
         run: echo "build"
 
       - name: composite
         uses: ./.github/actions/setup-environment
-    needs: checkout
+
   
   test:
     runs-on: ubuntu-latest
