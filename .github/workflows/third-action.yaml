@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: build
         run: echo "build"
+      - name: Composite
+        run: echo "Composite"
   
   test:
     runs-on: ubuntu-latest
