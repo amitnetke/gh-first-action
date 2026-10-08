@@ -1,0 +1,12 @@
+name: composite
+
+
+runs:
+  using: 'composite'
+  steps:
+
+    - name: first
+      run: echo "first"
+      
+    - name: second
+      run: echo "second"
