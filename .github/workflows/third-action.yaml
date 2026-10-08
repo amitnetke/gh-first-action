@@ -10,9 +10,6 @@ jobs:
     steps:
       - name: checout code
         uses: actions/checkout@v4
-        
-      - name: build
-        run: echo "build"
 
       - name: composite
         uses: ./.github/actions/setup-environment
