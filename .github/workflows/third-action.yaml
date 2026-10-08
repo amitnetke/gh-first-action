@@ -1,7 +1,7 @@
 name: dummy
 on:
   workflow_dispatch:
-
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,8 +17,8 @@ jobs:
     needs: build
 
   deploy:
-      environment:
-        name: Prod
+    environment:
+      name: Prod
     runs-on: ubuntu-latest
     steps:
       - name: test
