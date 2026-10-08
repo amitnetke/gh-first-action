@@ -18,6 +18,7 @@ jobs:
 
       - name: composite
         uses: ./.github/actions/setup-environment
+    needs: checkout
   
   test:
     runs-on: ubuntu-latest
