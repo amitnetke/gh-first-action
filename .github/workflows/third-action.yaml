@@ -15,3 +15,12 @@ jobs:
       - name: test
         run: echo "test"
     needs: build
+
+  deploy:
+      environment:
+        name: Prod
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: echo "test"
+    needs: test
