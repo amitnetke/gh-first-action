@@ -3,15 +3,17 @@ on:
   workflow_dispatch:
   
 jobs:
-  test:
+  job_1:
     runs-on: ubuntu-latest
+    outputs:
+      sum: ${{ steps.calculate.outputs.sum }}
     steps:
-      - name: test
-        run: echo "RESULT=10" >> $GITHUB_ENV
+      - id: calculate
+        run: echo "sum=10" >> $GITHUB_ENV
 
-  deploy:
+  job_2:
     runs-on: ubuntu-latest
+    needs: job_1
     steps:
-      - name: test
-        run: echo "The result is $RESULT"
-    needs: test
+      - name: Use output from job 1
+        run: echo "The sum is ${{ needs.job_1.outputs.sum }}"
