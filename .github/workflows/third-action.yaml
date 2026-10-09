@@ -5,15 +5,9 @@ on:
 jobs:
   job_1:
     runs-on: ubuntu-latest
-    outputs:
-      sum: ${{ steps.calculate.outputs.sum }}
+   
     steps:
-      - id: calculate
-        run: echo "sum=10" >> $GITHUB_ENV
-
-  job_2:
-    runs-on: ubuntu-latest
-    needs: job_1
-    steps:
-      - name: Use output from job 1
-        run: echo "The sum is ${{ needs.job_1.outputs.sum }}"
+      - name: calculate
+        env:    
+          MY_API_KEY: ${{ secrets.API_TOKEN }}
+        run: echo $MY_API_KEY
