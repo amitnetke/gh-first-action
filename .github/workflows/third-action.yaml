@@ -7,20 +7,13 @@ jobs:
   
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-        node-version: [18, 20. 22]
-        
     steps:
       - name: test
-        run: echo "test"
+       run: echo "RESULT=10" >> $GITHUB_ENV
 
   deploy:
-    environment:
-      name: Prod
     runs-on: ubuntu-latest
     steps:
       - name: test
-        run: echo "test"
+        run: echo "The result is $RESULT"
     needs: test
