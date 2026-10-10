@@ -25,6 +25,9 @@ jobs:
       - name: test
         run: echo "test"
     needs: build
+    strategy:
+      matrix:
+        node-version: [10, 11, 12]
   deploy:
     runs-on: ubuntu-latest
     steps:
