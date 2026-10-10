@@ -4,6 +4,11 @@ on:
   push:
 
 jobs:
+  checkout:
+    runs-on: macos-latest
+    steps:
+      - name: checkout
+        uses: action/checkout@v4
   build:
     runs-on: ubuntu-latest
     steps:
