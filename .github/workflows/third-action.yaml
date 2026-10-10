@@ -3,11 +3,5 @@ on:
   workflow_dispatch:
   
 jobs:
-  job_1:
-    runs-on: ubuntu-latest
-   
-    steps:
-      - name: calculate
-        env:    
-          MY_API_KEY: ${{ secrets.API_TOKEN }}
-        run: echo $MY_API_KEY
+  call-reusable:
+    uses: amitnetke/gh-first-action/.github/workflows/reusable-workflow.yml@main
