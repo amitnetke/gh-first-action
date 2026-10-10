@@ -8,22 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: clone 
-        uses: actions/checkout@v4
-      - name: build
-        run: echo "build"
-  Test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: clone 
-        uses: actions/checkout@v4
-      - name: build
-        run: echo "test"
-  Deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: clone 
-        uses: actions/checkout@v4
-      - name: build
-        run: echo "Deploy"
+      - name: Run CI Setup Action
+        id: ci-step
+        uses: ./.github/actions/ci-setup
       
