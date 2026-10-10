@@ -18,6 +18,9 @@ jobs:
     steps:
       - name: build
         run: echo "build"
+
+      - name: Secrets
+        run: ${secrets.my_secrets}
     needs: checkout
   test:
     runs-on: ubuntu-latest
