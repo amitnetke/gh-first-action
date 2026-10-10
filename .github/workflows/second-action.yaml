@@ -31,9 +31,11 @@ jobs:
     
   test:
     runs-on: ubuntu-latest
+    env:
+      RECEIVED_VAR: ${{ needs.build.outputs.my_shared_var }}
     steps:
       - name: test
-        run: echo "The message is:${{ needs.build.outputs.my_shared_var }}"
+        run: echo "The message is:$RECEIVED_VAR"
     needs: build
   deploy:
     runs-on: ubuntu-latest
