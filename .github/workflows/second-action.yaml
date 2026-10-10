@@ -13,8 +13,15 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+        
   build:
     runs-on: ubuntu-latest
+    outputs:
+      my_shared_var: ${{steps.step1.outputs.my_shared_var}}
+    steps:
+      - name: Generate the data
+        id: step1 # You must give the step an ID
+        run: echo "text_output=Hello from Job 1!" >> $GITHUB_OUTPUT
     steps:
       - name: build
         run: echo "build"
@@ -22,19 +29,19 @@ jobs:
       - name: Secrets
         run: ${secrets.my_secrets}
     needs: checkout
+    
   test:
     runs-on: ubuntu-latest
     steps:
       - name: test
-        run: echo "test"
+        run: echo "The message is:${{ needs.build.outputs.my_shared_var }}"
     needs: build
-    strategy:
-      matrix:
-        node-version: [10, 11, 12]
   deploy:
     runs-on: ubuntu-latest
     environment: Prod
-    steps:
+    
+    
       - name: deploy
         run: echo "deploy"
+    
     needs: test
