@@ -8,6 +8,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
       - name: Run CI Setup Action
         id: ci-step
         uses: ./.github/actions/ci-setup
