@@ -1,9 +1,12 @@
 name: CI
+description: my test
 
 runs:
   using: 'composite'
   steps:
     - name: first
       run: echo "first"
+      shell: bash
     - name: second
       run: echo "second"
+      shell: bash
