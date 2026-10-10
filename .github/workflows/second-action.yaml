@@ -22,7 +22,6 @@ jobs:
       - name: Generate the data
         id: step1 # You must give the step an ID
         run: echo "text_output=Hello from Job 1!" >> $GITHUB_OUTPUT
-    steps:
       - name: build
         run: echo "build"
 
@@ -39,8 +38,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: Prod
-    
-    
+    steps:
       - name: deploy
         run: echo "deploy"
     
