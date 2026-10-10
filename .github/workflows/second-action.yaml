@@ -1,12 +1,21 @@
-name: Manual Workflow
-
+name: 2nd workflow
 on:
-  workflow_dispatch: # Enables the manual trigger button
-  schedule:
-    - cron: '10 15 * * *'  
+  workflow_dispatch:
+  push:
 
 jobs:
-  greet:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello World!"
+      - name: build
+        run: echo "build"
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: echo "test"
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy
+        run: echo "deploy"
