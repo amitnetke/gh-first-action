@@ -1,6 +1,8 @@
 name: testfile
 on:
   workflow_dispatch:
+  push:
+  
 jobs:
   Builds: 
     runs-on: ubuntu-latest
