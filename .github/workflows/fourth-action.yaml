@@ -1,0 +1,15 @@
+name: testfile
+on:
+  workflow_dispatch:
+jobs:
+  Builds: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        run: echo "checkout"
+      - name: build
+        run: echo "build"
+      - name: test
+        run: echo "test"
+      - name: deploy
+        run: echo "deploy"
